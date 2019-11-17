@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/main.js"></script>
+
+    <style>
+        #app {
+            width: 300px;
+            height: 200px;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+
+        .other {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div class="other">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+            <img class="img" alt=""
+                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+        </div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+    </div>
+    <script>
+        let observe = new observerTools("onBottom", document.querySelectorAll("#app"), null, function(res){
+            console.log("触底", res)
+        });
+    </script>
+</body>
+
+</html>
