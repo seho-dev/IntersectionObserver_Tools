@@ -36,7 +36,18 @@ function observerTools($type = "lazyLoad", target, $option, callback) {
             case "onBottom":
                 // 如果末尾元素进入视口，则触底
                 if (entries[0].isIntersecting) {
-                  return callback(entries[0]);
+                    return callback(entries[0]);
+                }
+                break;
+
+            case "onTop":
+                // 判断交叉
+                if (entries[0].boundingClientRect.top < 0) {
+                    // 添加class类名
+                    target[0].classList.add("observer_onTop");
+                    return callback(entries[0]);
+                }else {
+                    target[0].classList.remove("observer_onTop")
                 }
                 break;
         }
@@ -60,6 +71,13 @@ function observerTools($type = "lazyLoad", target, $option, callback) {
             target[0].appendChild(onBottom);
             observe.observe(onBottom)
             break;
+        case "onTop":
+            // 创建一个div在吸顶元素之上
+            let reference = document.createElement("div");
+            reference.classList.add("observe_top_main")
+            $option.root.insertBefore(reference, target[0]);
+            // 监听目标元素
+            observe.observe(reference);
     }
 
 }

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="/main.js"></script>
-
+    <link rel="stylesheet" href="./index.css">
     <style>
         #app {
             width: 300px;
@@ -30,7 +30,7 @@
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
-        <div>其他元素</div>
+        <div class="onTop">吸顶了</div>
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
@@ -65,8 +65,14 @@
         <div>其他元素</div>
     </div>
     <script>
-        let observe = new observerTools("onBottom", document.querySelectorAll("#app"), null, function(res){
-            console.log("触底", res)
+        // let observe = new observerTools("onBottom", document.querySelectorAll("#app"), null, function(res){
+        //     // 触底回调 
+        // });
+        let observe = new observerTools("onTop", document.querySelectorAll(".onTop"), {
+            root: document.getElementById("app")
+        }, function (res) {
+            // 吸顶
+            console.log(res)
         });
     </script>
 </body>
