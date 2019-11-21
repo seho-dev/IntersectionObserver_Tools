@@ -14,22 +14,26 @@ const LAZY_LOAD_ATTRIBUTE = "data-observerLazyLoad";
  * @param {*} target 监听目标元素
  * @param {*} $option 自定义配置参数
  */
-function observerTools($type = "lazyLoad", target, $option, callback) {
+export default function observerTools($type = "lazyLoad", target, $option, callback) {
     // 创建触底对象
     let onBottom = null;
 
     // 创建observer对象
-    let observe = new IntersectionObserver(function (entries) {
+    let observe = new IntersectionObserver(entries => {
         // 判断type传参
         switch ($type) {
             case "lazyLoad":
                 // 判断元素和指定视口是否发生交叉，如果发生交叉
-                entries.forEach(function (entriesChild, index) {
+                entries.forEach((entriesChild, index) => {
                     if (entriesChild.isIntersecting) {
+                        console.log("asssss");
                         // 取出监听元素的自定义属性
                         entriesChild.target.src = entriesChild.target.getAttribute(LAZY_LOAD_ATTRIBUTE);
                         // 移除监听的元素
                         observe.unobserve(entriesChild.target);
+                    }else {
+                        // 把默认的图片放在src中
+                        entriesChild.target.src = $option.lazyLoading;
                     }
                 })
                 break;
@@ -46,17 +50,23 @@ function observerTools($type = "lazyLoad", target, $option, callback) {
                     // 添加class类名
                     target[0].classList.add("observer_onTop");
                     return callback(entries[0]);
-                }else {
+                } else {
                     target[0].classList.remove("observer_onTop")
                 }
                 break;
+            case "listAnimation":
+                entries.forEach(element => {
+                    if (element.isIntersecting) {
+                        element.target.classList.add("observe-animation-show")
+                    }
+                })
         }
     }, $option);
     // 如果type是onBottom
     switch ($type) {
         case "lazyLoad":
             // 判断目标元素是否存在, 如果是元素数组，就循环监听
-            target.forEach(function (element) {
+            target.forEach(element => {
                 let checkResult = isElement(element);
                 if (checkResult) {
                     observe.observe(element); // 监听元素
@@ -78,6 +88,10 @@ function observerTools($type = "lazyLoad", target, $option, callback) {
             $option.root.insertBefore(reference, target[0]);
             // 监听目标元素
             observe.observe(reference);
+        case "listAnimation":
+            target.forEach(element => {
+                observe.observe(element);
+            })
     }
 
 }

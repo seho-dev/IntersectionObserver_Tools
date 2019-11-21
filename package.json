@@ -1,11 +1,27 @@
 {
   "name": "observertools",
-  "version": "1.0.0",
-  "description": "这是一款基于intersectionobserver实现的web,封装了常用的webapp需频率较高比较耗，简单易用\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b，\u001b\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
-  "main": "main.js",
+  "version": "1.0.4",
+  "description": "这是一款基于intersectionobserver实现的web,封装了常用的webapp需频率较高比较耗费时间的“监听窗口,列表的功能”，额外的提供了列表的平滑动画，让web应用的列表不再枯燥无聊",
+  "main": "dist/observertools.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch"
   },
   "author": "shenhao",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "observertools": "1.0.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.2",
+    "@babel/runtime-corejs2": "^7.7.2",
+    "css-loader": "^3.2.0"
+  }
 }

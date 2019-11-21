@@ -6,20 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="/main.js"></script>
+    <script src="./dist/observertools.js"></script>
+    <script src="./dist/test.js"></script>
     <link rel="stylesheet" href="./index.css">
     <style>
         #app {
             width: 300px;
-            height: 200px;
+            height: 300px;
             overflow-y: auto;
-            overflow-x: auto;
         }
 
-        .other {
+        /* .other {
             display: flex;
             justify-content: flex-start;
             align-items: center;
+        } */
+
+        .img {
+            width: 300px;
+            height: 300px;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
         }
     </style>
 </head>
@@ -30,7 +38,6 @@
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
-        <div class="onTop">吸顶了</div>
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
@@ -43,36 +50,40 @@
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
-        <div class="other">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-            <img class="img" alt=""
-                data-observerLazyLoad="http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-        </div>
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+
+        <img class="img" alt=""
+            data-observerLazyLoad="http://a.hiphotos.baidu.com/image/pic/item/f603918fa0ec08fa3139e00153ee3d6d55fbda5f.jpg">
+        <img class="img" alt=""
+            data-observerLazyLoad="http://h.hiphotos.baidu.com/image/pic/item/b3b7d0a20cf431ad7427dfad4136acaf2fdd98a9.jpg">
+        <img class="img" alt=""
+            data-observerLazyLoad="http://b.hiphotos.baidu.com/image/pic/item/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
+        <img class="img" alt=""
+            data-observerLazyLoad="http://a.hiphotos.baidu.com/image/pic/item/9a504fc2d5628535bdaac29e9aef76c6a6ef63c2.jpg">
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div>
+        <div>其他元素</div> -->
     </div>
     <script>
         // let observe = new observerTools("onBottom", document.querySelectorAll("#app"), null, function(res){
         //     // 触底回调 
         // });
-        let observe = new observerTools("onTop", document.querySelectorAll(".onTop"), {
-            root: document.getElementById("app")
-        }, function (res) {
-            // 吸顶
-            console.log(res)
+        console.log(document.querySelectorAll(".img"))
+        let observe = new observertools.default("lazyLoad", document.querySelectorAll(".img"), {
+            root: document.getElementById("app"),
+            lazyLoading: "http://b.hiphotos.baidu.com/image/pic/item/f9dcd100baa1cd11cb2d45bfb312c8fcc2ce2d91.jpg",
         });
     </script>
 </body>
