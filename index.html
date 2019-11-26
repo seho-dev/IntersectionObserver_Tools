@@ -29,6 +29,18 @@
             text-align: center;
             line-height: 100px;
         }
+
+        .observe-animation-diy {
+            animation: diy 1s ease;
+        }
+        @keyframes diy{
+            from {
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -62,28 +74,36 @@
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
-
-        <img class="img" alt=""
-            data-observerLazyLoad="http://a.hiphotos.baidu.com/image/pic/item/f603918fa0ec08fa3139e00153ee3d6d55fbda5f.jpg">
-        <img class="img" alt=""
-            data-observerLazyLoad="http://h.hiphotos.baidu.com/image/pic/item/b3b7d0a20cf431ad7427dfad4136acaf2fdd98a9.jpg">
-        <img class="img" alt=""
-            data-observerLazyLoad="http://b.hiphotos.baidu.com/image/pic/item/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg">
-        <img class="img" alt=""
-            data-observerLazyLoad="http://a.hiphotos.baidu.com/image/pic/item/9a504fc2d5628535bdaac29e9aef76c6a6ef63c2.jpg">
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
+        <div class="touch">滑动元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
-        <div>其他元素</div> -->
+        <div>其他元素</div>
     </div>
     <script>
         // let observe = new observerTools("onBottom", document.querySelectorAll("#app"), null, function(res){
         //     // 触底回调 
         // });
-        console.log(document.querySelectorAll(".img"))
-        let observe = new observertools.default("lazyLoad", document.querySelectorAll(".img"), {
+        let observe = new observertools.default("listAnimation", document.querySelectorAll(".touch"), {
             root: document.getElementById("app"),
-            lazyLoading: "http://b.hiphotos.baidu.com/image/pic/item/f9dcd100baa1cd11cb2d45bfb312c8fcc2ce2d91.jpg",
+            // 设置动画属性
+            animation: "diy",
+            // animationTimingFunction: "ease-in-out",
+            // animationDuration: "1",
+            // animationDelay: "5"
+            // lazyLoading: "http://b.hiphotos.baidu.com/image/pic/item/f9dcd100baa1cd11cb2d45bfb312c8fcc2ce2d91.jpg",
         });
     </script>
 </body>

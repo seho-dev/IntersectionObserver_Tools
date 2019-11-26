@@ -13,18 +13,33 @@
     动画列表的css样式
 **/
 
-.observe-animation-show {
+/*左右列表分别fade飘入*/
+.observe-animation-leftAndRightFadeIn {
     animation: left 1s ease;
 }
 
-.observe-animation-show:nth-child(2n) {
+.observe-animation-leftAndRightFadeIn:nth-child(2n) {
     animation: right 1s ease;
 }
+
+/*列表统一左fade飘入*/
+.observe-animation-leftFadeIn {
+    animation: left 1s ease;
+}
+/*列表统一右fade飘入*/
+.observe-animation-rightFadeIn {
+    animation: right 1s ease;
+}
+/*列表统一fade*/
+.observe-animation-fadeIn {
+    animation: fade 1s ease;
+}
+
 
 @keyframes left {
     from {
         opacity: 0;
-        transform: translate(-20px, 20px);
+        transform: translate(-20px, 0px);
     }
 
     to {
@@ -35,9 +50,17 @@
 @keyframes right {
     from {
         opacity: 0;
-        transform: translate(20px, 20px);
+        transform: translate(20px, 0px);
     }
+    to {
+        opacity: 1;
+    }
+}
 
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
     to {
         opacity: 1;
     }

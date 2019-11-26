@@ -4,7 +4,6 @@
  * 
  */
 
-
 const LAZY_LOAD_ATTRIBUTE = "data-observerLazyLoad";
 
 /**
@@ -31,7 +30,7 @@ export default function observerTools($type = "lazyLoad", target, $option, callb
                         entriesChild.target.src = entriesChild.target.getAttribute(LAZY_LOAD_ATTRIBUTE);
                         // 移除监听的元素
                         observe.unobserve(entriesChild.target);
-                    }else {
+                    } else {
                         // 把默认的图片放在src中
                         entriesChild.target.src = $option.lazyLoading;
                     }
@@ -57,7 +56,11 @@ export default function observerTools($type = "lazyLoad", target, $option, callb
             case "listAnimation":
                 entries.forEach(element => {
                     if (element.isIntersecting) {
-                        element.target.classList.add("observe-animation-show")
+                        // 预定义动画, 直接把值拿出直接添加对应的class
+                        element.target.style.animationDuration = `${$option.animationDuration}s`; // 设置元素的动画时间
+                        element.target.style.animationTimingFunction = `${$option.animationTimingFunction}`; // 设置元素的动画曲线类型
+                        element.target.style.animationDelay = `${$option.animationDelay}s`; // 设置元素的动画延迟
+                        element.target.classList.add(`observe-animation-${$option.animation}`); // 自定义动画
                     }
                 })
         }
