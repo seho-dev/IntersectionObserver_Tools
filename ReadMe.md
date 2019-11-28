@@ -1,10 +1,6 @@
 一款用于懒加载,吸顶,触底,列表动画等功能的工具库，基于intersectionobserver
 =========================================================================
 
-[![NPM Version][npm-version-image]][https://www.npmjs.com/package/observertools]
-[![NPM Downloads][npm-downloads-image]][https://www.npmjs.com/package/observertools]
-
-
 chinese:
 -------
 
