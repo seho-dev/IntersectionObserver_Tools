@@ -74,20 +74,8 @@
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
-        <div class="touch">滑动元素</div>
         <div>其他元素</div>
+        <!-- <div style="width: 100%;height: 40px;background: red;" class="touch">触底元素</div> -->
         <div>其他元素</div>
         <div>其他元素</div>
         <div>其他元素</div>
@@ -96,14 +84,8 @@
         // let observe = new observerTools("onBottom", document.querySelectorAll("#app"), null, function(res){
         //     // 触底回调 
         // });
-        let observe = new observertools.default("listAnimation", document.querySelectorAll(".touch"), {
-            root: document.getElementById("app"),
-            // 设置动画属性
-            animation: "diy",
-            // animationTimingFunction: "ease-in-out",
-            // animationDuration: "1",
-            // animationDelay: "5"
-            // lazyLoading: "http://b.hiphotos.baidu.com/image/pic/item/f9dcd100baa1cd11cb2d45bfb312c8fcc2ce2d91.jpg",
+        let observe = new observertools.default("onBottom", document.querySelectorAll("#app"), null, res => {
+            alert("触底")
         });
     </script>
 </body>

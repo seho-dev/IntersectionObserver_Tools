@@ -25,11 +25,11 @@ export default function observerTools($type = "lazyLoad", target, $option, callb
                 // 判断元素和指定视口是否发生交叉，如果发生交叉
                 entries.forEach((entriesChild, index) => {
                     if (entriesChild.isIntersecting) {
-                        console.log("asssss");
                         // 取出监听元素的自定义属性
                         entriesChild.target.src = entriesChild.target.getAttribute(LAZY_LOAD_ATTRIBUTE);
                         // 移除监听的元素
                         observe.unobserve(entriesChild.target);
+                        return callback(entries[0]);
                     } else {
                         // 把默认的图片放在src中
                         entriesChild.target.src = $option.lazyLoading;
@@ -61,6 +61,7 @@ export default function observerTools($type = "lazyLoad", target, $option, callb
                         element.target.style.animationTimingFunction = `${$option.animationTimingFunction}`; // 设置元素的动画曲线类型
                         element.target.style.animationDelay = `${$option.animationDelay}s`; // 设置元素的动画延迟
                         element.target.classList.add(`observe-animation-${$option.animation}`); // 自定义动画
+                        return callback(element);
                     }
                 })
         }

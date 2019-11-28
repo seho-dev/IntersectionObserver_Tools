@@ -1,6 +1,6 @@
 {
   "name": "observertools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "这是一款基于intersectionobserver实现的web,封装了常用的webapp需频率较高比较耗费时间的“监听窗口,列表的功能”，额外的提供了列表的平滑动画，让web应用的列表不再枯燥无聊",
   "main": "dist/observertools.js",
   "scripts": {
